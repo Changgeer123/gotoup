@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpmocvs577iud"]
+
+[ext_resource type="Script" uid="uid://csdusxiudd6vd" path="res://脚本/角色.gd" id="1_novfl"]
+[ext_resource type="Texture2D" uid="uid://chvy5uekkganx" path="res://美术/人物.png" id="1_umjw2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umjw2"]
+size = Vector2(72, 96)
+
+[node name="角色" type="CharacterBody2D"]
+script = ExtResource("1_novfl")
+
+[node name="人物" type="Sprite2D" parent="."]
+scale = Vector2(0.47921664, 0.47921664)
+texture = ExtResource("1_umjw2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_umjw2")
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck5dn7kp5vfle"]
+
+[ext_resource type="Script" uid="uid://chtgosck5gj4w" path="res://脚本/可移动土块.gd" id="1_hlpgk"]
+[ext_resource type="Texture2D" uid="uid://d1ylxdl0lwtjx" path="res://美术/背景.png" id="1_mscyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlpgk"]
+size = Vector2(104, 47)
+
+[node name="可移动土块" type="StaticBody2D"]
+script = ExtResource("1_hlpgk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.388392e-06, -0.49999928)
+scale = Vector2(0.11711712, 0.052222222)
+texture = ExtResource("1_mscyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_hlpgk")

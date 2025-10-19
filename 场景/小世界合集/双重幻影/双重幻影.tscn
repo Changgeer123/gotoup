@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckstghge2ilj8"]
+
+[ext_resource type="Texture2D" uid="uid://d1ylxdl0lwtjx" path="res://美术/背景.png" id="1_c72rr"]
+[ext_resource type="Script" uid="uid://dgdlyaekg71xn" path="res://场景/小世界合集/双重幻影/幻影光临.gd" id="2_npi75"]
+[ext_resource type="PackedScene" uid="uid://ck5dn7kp5vfle" path="res://场景/道具/可移动土块.tscn" id="3_i1w2e"]
+[ext_resource type="PackedScene" uid="uid://b10xlkcxltfxl" path="res://场景/道具/土块.tscn" id="4_q0bgn"]
+[ext_resource type="Script" uid="uid://df4hxnwwk3qxu" path="res://场景/小世界合集/双重幻影/传送.gd" id="6_6jqbb"]
+[ext_resource type="Script" uid="uid://cg6ksfmqtxd6p" path="res://场景/小世界合集/双重幻影/合二为一.gd" id="6_p05xp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c72rr"]
+size = Vector2(84, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32epl"]
+size = Vector2(262, 218)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jqbb"]
+size = Vector2(281.25, 218.25)
+
+[node name="双重幻影" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 657.60443)
+scale = Vector2(3.858242, 2.3968987)
+texture = ExtResource("1_c72rr")
+
+[node name="幻影光临" type="Area2D" parent="."]
+script = ExtResource("2_npi75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="幻影光临"]
+shape = SubResource("RectangleShape2D_c72rr")
+
+[node name="可移动土块" parent="." instance=ExtResource("3_i1w2e")]
+position = Vector2(7.6293945e-06, 80)
+scale = Vector2(40, -0.234)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="土块" parent="Node2D" instance=ExtResource("4_q0bgn")]
+position = Vector2(610, -724)
+scale = Vector2(1.051, 0.1)
+
+[node name="土块4" parent="Node2D" instance=ExtResource("4_q0bgn")]
+position = Vector2(2788, -1069)
+scale = Vector2(1.051, 0.1)
+
+[node name="土块3" parent="Node2D" instance=ExtResource("4_q0bgn")]
+position = Vector2(1686, -908)
+scale = Vector2(1.051, 0.1)
+
+[node name="竖墙" parent="Node2D" instance=ExtResource("4_q0bgn")]
+position = Vector2(508, -1897)
+rotation = 1.5707964
+scale = Vector2(1.051, 0.1)
+
+[node name="长条" parent="Node2D" instance=ExtResource("4_q0bgn")]
+position = Vector2(1383, -1437)
+scale = Vector2(2, 0.1)
+
+[node name="合二为一" type="Area2D" parent="."]
+script = ExtResource("6_p05xp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="合二为一"]
+position = Vector2(2148, -1597)
+shape = SubResource("RectangleShape2D_32epl")
+
+[node name="传送" type="Area2D" parent="."]
+script = ExtResource("6_6jqbb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="传送"]
+position = Vector2(1177, -1566)
+shape = SubResource("RectangleShape2D_6jqbb")
+
+[connection signal="body_entered" from="幻影光临" to="幻影光临" method="_on_body_entered"]
+[connection signal="body_entered" from="合二为一" to="合二为一" method="_on_body_entered"]
+[connection signal="body_entered" from="传送" to="传送" method="_on_body_entered"]

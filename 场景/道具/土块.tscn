@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b10xlkcxltfxl"]
+
+[ext_resource type="Script" uid="uid://bgwsjfrfgna15" path="res://脚本/土块.gd" id="1_4hpfk"]
+[ext_resource type="Texture2D" uid="uid://d1ylxdl0lwtjx" path="res://美术/背景.png" id="1_khgwj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khgwj"]
+size = Vector2(888, 261)
+
+[node name="土块" type="StaticBody2D"]
+script = ExtResource("1_4hpfk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.32, 0.32, 0.32, 1)
+position = Vector2(0, 0.5)
+scale = Vector2(1, 0.29)
+texture = ExtResource("1_khgwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_khgwj")

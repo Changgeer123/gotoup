@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8cimsedmqb78"]
+
+[ext_resource type="PackedScene" uid="uid://b10xlkcxltfxl" path="res://场景/道具/土块.tscn" id="1_2dvgu"]
+[ext_resource type="Script" uid="uid://b5krerex7osa5" path="res://场景/小世界合集/地狱一号/事件到站.gd" id="2_5d0gl"]
+[ext_resource type="PackedScene" uid="uid://beawrantwvmnn" path="res://场景/小世界合集/地狱一号/地狱矿车/矿车.tscn" id="2_cln54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cln54"]
+size = Vector2(81.5, 61)
+
+[node name="地狱一号" type="Node2D"]
+
+[node name="地形一" type="Node2D" parent="."]
+
+[node name="平台一号" parent="地形一" instance=ExtResource("1_2dvgu")]
+position = Vector2(-286.99997, -9.999998)
+scale = Vector2(1.6, 0.2)
+
+[node name="斜坡一号" parent="地形一" instance=ExtResource("1_2dvgu")]
+position = Vector2(1183, 419.99988)
+rotation = 0.51121044
+scale = Vector2(1.995, 0.2)
+
+[node name="事件到站" type="Area2D" parent="地形一"]
+script = ExtResource("2_5d0gl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="地形一/事件到站"]
+position = Vector2(2016, 793)
+shape = SubResource("RectangleShape2D_cln54")
+
+[node name="矿车" parent="." instance=ExtResource("2_cln54")]
+position = Vector2(473, -28.999985)
+rotation = 0.51138145
+
+[connection signal="area_entered" from="地形一/事件到站" to="地形一/事件到站" method="_on_area_entered"]
+[connection signal="body_entered" from="地形一/事件到站" to="地形一/事件到站" method="_on_body_entered"]

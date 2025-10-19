@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxmv8scv4s3os"]
+
+[ext_resource type="Texture2D" uid="uid://d1ylxdl0lwtjx" path="res://美术/背景.png" id="1_o5lm3"]
+[ext_resource type="PackedScene" uid="uid://dpmocvs577iud" path="res://场景/角色/角色.tscn" id="2_r1b65"]
+[ext_resource type="PackedScene" uid="uid://b10xlkcxltfxl" path="res://场景/道具/土块.tscn" id="3_ed7t1"]
+[ext_resource type="Script" uid="uid://t6i41djqodfh" path="res://脚本/初始土块陷阱.gd" id="4_o0xaq"]
+[ext_resource type="PackedScene" uid="uid://d3x3xiuvwyire" path="res://场景/道具/终点.tscn" id="4_qysdn"]
+[ext_resource type="PackedScene" uid="uid://c8cimsedmqb78" path="res://场景/小世界合集/地狱一号/地狱一号.tscn" id="6_3fatf"]
+[ext_resource type="PackedScene" uid="uid://ckstghge2ilj8" path="res://场景/小世界合集/双重幻影/双重幻影.tscn" id="7_t7rjn"]
+[ext_resource type="PackedScene" uid="uid://bnpaqxigch5wv" path="res://场景/小世界合集/幸福小区/幸福小气.tscn" id="8_0faug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fatf"]
+size = Vector2(261.75, 85)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="背景" type="Sprite2D" parent="."]
+position = Vector2(614, -17.499878)
+scale = Vector2(2.1576576, 2.8388891)
+texture = ExtResource("1_o5lm3")
+
+[node name="角色" parent="." instance=ExtResource("2_r1b65")]
+position = Vector2(131, 609)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="终点" parent="." instance=ExtResource("4_qysdn")]
+position = Vector2(1075, 131)
+
+[node name="初始土块四兄弟" type="Node2D" parent="."]
+script = ExtResource("4_o0xaq")
+
+[node name="悬空土块1" parent="初始土块四兄弟" instance=ExtResource("3_ed7t1")]
+position = Vector2(460, 536.00006)
+scale = Vector2(0.29257396, -0.12155314)
+
+[node name="悬空土块2" parent="初始土块四兄弟" instance=ExtResource("3_ed7t1")]
+position = Vector2(855.99994, 441.00003)
+scale = Vector2(0.29257396, -0.12155314)
+
+[node name="悬空土块3" parent="初始土块四兄弟" instance=ExtResource("3_ed7t1")]
+position = Vector2(482, 302.00003)
+scale = Vector2(0.29257396, -0.12155314)
+
+[node name="悬空土块4" parent="初始土块四兄弟" instance=ExtResource("3_ed7t1")]
+position = Vector2(918, 204)
+scale = Vector2(0.39287663, -0.15508531)
+
+[node name="初始地面" parent="初始土块四兄弟" instance=ExtResource("3_ed7t1")]
+position = Vector2(549, 811)
+scale = Vector2(1.592337, 0.8994985)
+
+[node name="Area2D" type="Area2D" parent="初始土块四兄弟"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="初始土块四兄弟/Area2D"]
+position = Vector2(873, 142)
+shape = SubResource("RectangleShape2D_3fatf")
+
+[node name="地狱一号" parent="." instance=ExtResource("6_3fatf")]
+position = Vector2(1259, 3046)
+rotation = 0.00039024826
+
+[node name="双重幻影" parent="." instance=ExtResource("7_t7rjn")]
+position = Vector2(4013, 7123)
+
+[node name="幸福小区" parent="." instance=ExtResource("8_0faug")]
+position = Vector2(8590, 520)
+
+[connection signal="body_entered" from="初始土块四兄弟/Area2D" to="初始土块四兄弟" method="_on_area_2d_body_entered"]

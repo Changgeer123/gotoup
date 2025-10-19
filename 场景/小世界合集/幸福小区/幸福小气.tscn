@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnpaqxigch5wv"]
+
+[ext_resource type="Script" uid="uid://c0rmbm78yjr1c" path="res://场景/小世界合集/幸福小区/幸福小气.gd" id="1_10bq5"]
+[ext_resource type="Texture2D" uid="uid://bc2wr6yqty8vy" path="res://美术/楼房.png" id="1_qf4pu"]
+[ext_resource type="PackedScene" uid="uid://b10xlkcxltfxl" path="res://场景/道具/土块.tscn" id="2_cptox"]
+[ext_resource type="PackedScene" uid="uid://dpmocvs577iud" path="res://场景/角色/角色.tscn" id="4_00ilc"]
+[ext_resource type="PackedScene" uid="uid://bwfmxjodvtt45" path="res://场景/角色/可吞噬分身.tscn" id="5_xm3mu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cptox"]
+size = Vector2(2680, 1306)
+
+[node name="幸福小区" type="Node2D"]
+script = ExtResource("1_10bq5")
+
+[node name="楼房合集" type="Node2D" parent="."]
+scale = Vector2(1.8579953, 1.8579953)
+
+[node name="楼房" type="Sprite2D" parent="楼房合集"]
+position = Vector2(701.6171, 561.89557)
+scale = Vector2(0.19023335, 0.19023335)
+texture = ExtResource("1_qf4pu")
+
+[node name="楼房2" type="Sprite2D" parent="楼房合集"]
+position = Vector2(507.29666, 140.15146)
+scale = Vector2(0.19023335, 0.19023335)
+texture = ExtResource("1_qf4pu")
+
+[node name="楼房3" type="Sprite2D" parent="楼房合集"]
+position = Vector2(504.2873, 565.33484)
+scale = Vector2(0.19023335, 0.19023335)
+texture = ExtResource("1_qf4pu")
+
+[node name="楼房4" type="Sprite2D" parent="楼房合集"]
+position = Vector2(506.43683, 360.69656)
+scale = Vector2(0.19023335, 0.19023335)
+texture = ExtResource("1_qf4pu")
+
+[node name="楼房5" type="Sprite2D" parent="楼房合集"]
+position = Vector2(694.7097, 154.15785)
+scale = Vector2(0.19023335, 0.19023335)
+texture = ExtResource("1_qf4pu")
+
+[node name="楼房6" type="Sprite2D" parent="楼房合集"]
+position = Vector2(885.7097, 155.15779)
+scale = Vector2(0.1902334, 0.1902334)
+texture = ExtResource("1_qf4pu")
+
+[node name="楼房7" type="Sprite2D" parent="楼房合集"]
+position = Vector2(698.6076, 361.98627)
+scale = Vector2(0.19023335, 0.19023335)
+texture = ExtResource("1_qf4pu")
+
+[node name="楼房8" type="Sprite2D" parent="楼房合集"]
+position = Vector2(888.629, 364.56573)
+scale = Vector2(0.19023332, 0.19023332)
+texture = ExtResource("1_qf4pu")
+
+[node name="楼房9" type="Sprite2D" parent="楼房合集"]
+position = Vector2(897.65717, 563.61523)
+scale = Vector2(0.19023332, 0.19023332)
+texture = ExtResource("1_qf4pu")
+
+[node name="围栏" type="Node2D" parent="."]
+
+[node name="土块" parent="围栏" instance=ExtResource("2_cptox")]
+position = Vector2(814, 28)
+scale = Vector2(3, 0.1)
+
+[node name="土块2" parent="围栏" instance=ExtResource("2_cptox")]
+position = Vector2(814.00006, 1277.0001)
+scale = Vector2(3, 0.1)
+
+[node name="土块3" parent="围栏" instance=ExtResource("2_cptox")]
+position = Vector2(2137.0005, 653.00006)
+rotation = 1.5707964
+scale = Vector2(1.4, -0.068)
+
+[node name="土块4" parent="围栏" instance=ExtResource("2_cptox")]
+position = Vector2(-506.99994, 660)
+rotation = 1.5707964
+scale = Vector2(1.4, -0.068)
+
+[node name="角色" parent="." instance=ExtResource("4_00ilc")]
+position = Vector2(170, 1166)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(817, 643)
+shape = SubResource("RectangleShape2D_cptox")
+
+[node name="可吞噬分身" parent="." instance=ExtResource("5_xm3mu")]
+position = Vector2(445, 1170)
+
+[node name="可吞噬分身2" parent="." instance=ExtResource("5_xm3mu")]
+position = Vector2(654, 1159)
+
+[node name="可吞噬分身3" parent="." instance=ExtResource("5_xm3mu")]
+position = Vector2(553, 1007)
+
+[node name="可吞噬分身4" parent="." instance=ExtResource("5_xm3mu")]
+position = Vector2(368, 980)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

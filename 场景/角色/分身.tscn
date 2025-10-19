@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://h6sktx4fu6oc"]
+
+[ext_resource type="Texture2D" uid="uid://chvy5uekkganx" path="res://美术/人物.png" id="1_laq4m"]
+
+[node name="分身" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.479, 0.479)
+texture = ExtResource("1_laq4m")
