@@ -1,19 +1,90 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpmocvs577iud"]
+[gd_scene load_steps=14 format=3 uid="uid://dpmocvs577iud"]
 
 [ext_resource type="Script" uid="uid://csdusxiudd6vd" path="res://脚本/角色.gd" id="1_novfl"]
-[ext_resource type="Texture2D" uid="uid://chvy5uekkganx" path="res://美术/人物.png" id="1_umjw2"]
+[ext_resource type="Texture2D" uid="uid://cjq2g5d316x4s" path="res://美术/Back.png" id="2_jkm2i"]
+[ext_resource type="Texture2D" uid="uid://b45vwrntisqua" path="res://美术/framesheet-1760888906368.png" id="3_q8m4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umjw2"]
 size = Vector2(72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtab7"]
+atlas = ExtResource("3_q8m4n")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfa8y"]
+atlas = ExtResource("3_q8m4n")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sfq8"]
+atlas = ExtResource("3_q8m4n")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80b7t"]
+atlas = ExtResource("3_q8m4n")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udvjx"]
+atlas = ExtResource("3_q8m4n")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scsyc"]
+atlas = ExtResource("3_q8m4n")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_368gk"]
+atlas = ExtResource("3_q8m4n")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc4vs"]
+atlas = ExtResource("3_q8m4n")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwfpe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtab7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfa8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sfq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80b7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udvjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scsyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_368gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc4vs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="角色" type="CharacterBody2D"]
 script = ExtResource("1_novfl")
 
 [node name="人物" type="Sprite2D" parent="."]
-scale = Vector2(0.47921664, 0.47921664)
-texture = ExtResource("1_umjw2")
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_jkm2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_umjw2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iwfpe")
+frame = 4
+frame_progress = 0.27679813
