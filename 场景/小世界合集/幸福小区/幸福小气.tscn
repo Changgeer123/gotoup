@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnpaqxigch5wv"]
+[gd_scene load_steps=5 format=3 uid="uid://bnpaqxigch5wv"]
 
 [ext_resource type="Script" uid="uid://c0rmbm78yjr1c" path="res://场景/小世界合集/幸福小区/幸福小气.gd" id="1_10bq5"]
-[ext_resource type="Texture2D" uid="uid://bc2wr6yqty8vy" path="res://美术/楼房.png" id="1_qf4pu"]
+[ext_resource type="PackedScene" uid="uid://dxqvjhiy1lkh0" path="res://场景/小世界合集/幸福小区/楼房.tscn" id="2_10bq5"]
 [ext_resource type="PackedScene" uid="uid://b10xlkcxltfxl" path="res://场景/道具/土块.tscn" id="2_cptox"]
-[ext_resource type="PackedScene" uid="uid://bwfmxjodvtt45" path="res://场景/角色/可吞噬分身.tscn" id="5_xm3mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cptox"]
 size = Vector2(2680, 1306)
@@ -14,50 +13,32 @@ script = ExtResource("1_10bq5")
 [node name="楼房合集" type="Node2D" parent="."]
 scale = Vector2(1.8579953, 1.8579953)
 
-[node name="楼房" type="Sprite2D" parent="楼房合集"]
-position = Vector2(701.6171, 561.89557)
-scale = Vector2(0.19023335, 0.19023335)
-texture = ExtResource("1_qf4pu")
+[node name="楼房" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(503.23056, 136.70648)
 
-[node name="楼房2" type="Sprite2D" parent="楼房合集"]
-position = Vector2(507.29666, 140.15146)
-scale = Vector2(0.19023335, 0.19023335)
-texture = ExtResource("1_qf4pu")
+[node name="楼房2" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(696.9878, 137.78291)
 
-[node name="楼房3" type="Sprite2D" parent="楼房合集"]
-position = Vector2(504.2873, 565.33484)
-scale = Vector2(0.19023335, 0.19023335)
-texture = ExtResource("1_qf4pu")
+[node name="楼房3" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(895.5889, 141.01218)
 
-[node name="楼房4" type="Sprite2D" parent="楼房合集"]
-position = Vector2(506.43683, 360.69656)
-scale = Vector2(0.19023335, 0.19023335)
-texture = ExtResource("1_qf4pu")
+[node name="楼房4" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(896.66534, 362.75656)
 
-[node name="楼房5" type="Sprite2D" parent="楼房合集"]
-position = Vector2(694.7097, 154.15785)
-scale = Vector2(0.19023335, 0.19023335)
-texture = ExtResource("1_qf4pu")
+[node name="楼房5" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(700.7553, 371.90622)
 
-[node name="楼房6" type="Sprite2D" parent="楼房合集"]
-position = Vector2(885.7097, 155.15779)
-scale = Vector2(0.1902334, 0.1902334)
-texture = ExtResource("1_qf4pu")
+[node name="楼房6" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(508.07443, 370.8298)
 
-[node name="楼房7" type="Sprite2D" parent="楼房合集"]
-position = Vector2(698.6076, 361.98627)
-scale = Vector2(0.19023335, 0.19023335)
-texture = ExtResource("1_qf4pu")
+[node name="楼房7" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(508.07443, 557.59033)
 
-[node name="楼房8" type="Sprite2D" parent="楼房合集"]
-position = Vector2(888.629, 364.56573)
-scale = Vector2(0.19023332, 0.19023332)
-texture = ExtResource("1_qf4pu")
+[node name="楼房8" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(710.9814, 571.58386)
 
-[node name="楼房9" type="Sprite2D" parent="楼房合集"]
-position = Vector2(897.65717, 563.61523)
-scale = Vector2(0.19023332, 0.19023332)
-texture = ExtResource("1_qf4pu")
+[node name="楼房9" parent="楼房合集" instance=ExtResource("2_10bq5")]
+position = Vector2(901.50934, 566.73987)
 
 [node name="围栏" type="Node2D" parent="."]
 
@@ -80,22 +61,11 @@ rotation = 1.5707964
 scale = Vector2(1.4, -0.068)
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(817, 643)
 shape = SubResource("RectangleShape2D_cptox")
-
-[node name="可吞噬分身" parent="." instance=ExtResource("5_xm3mu")]
-position = Vector2(445, 1170)
-
-[node name="可吞噬分身2" parent="." instance=ExtResource("5_xm3mu")]
-position = Vector2(654, 1159)
-
-[node name="可吞噬分身3" parent="." instance=ExtResource("5_xm3mu")]
-position = Vector2(553, 1007)
-
-[node name="可吞噬分身4" parent="." instance=ExtResource("5_xm3mu")]
-position = Vector2(368, 980)
 
 [node name="Node2D" type="Node2D" parent="."]
 

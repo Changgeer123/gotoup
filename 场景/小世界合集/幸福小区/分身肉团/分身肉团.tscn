@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdvqjal4x2i7h"]
+
+[ext_resource type="Script" uid="uid://ccdvmunearkuj" path="res://场景/小世界合集/幸福小区/分身肉团/分身肉团.gd" id="1_42o6k"]
+[ext_resource type="PackedScene" uid="uid://bwfmxjodvtt45" path="res://场景/角色/可吞噬分身.tscn" id="1_kierq"]
+
+[node name="分身肉团" type="Node2D"]
+scale = Vector2(0.68570805, 0.68570805)
+script = ExtResource("1_42o6k")
+
+[node name="可吞噬分身" parent="." instance=ExtResource("1_kierq")]
+
+[node name="可吞噬分身2" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(31, -28)
+
+[node name="可吞噬分身3" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(-6, -29)
+
+[node name="可吞噬分身4" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(-31, -5)
+
+[node name="可吞噬分身5" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(24, 28)
+
+[node name="可吞噬分身6" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(-9, 34)
+
+[node name="可吞噬分身7" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(-45, 57)
+
+[node name="可吞噬分身8" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(0, 92)
+
+[node name="可吞噬分身9" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(50, 86)
+
+[node name="可吞噬分身10" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(50, 31)
+
+[node name="可吞噬分身11" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(-28, -55)
+
+[node name="可吞噬分身12" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(-59, 18)
+
+[node name="可吞噬分身13" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(-39, 106)
+
+[node name="可吞噬分身14" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(14, -67)
+
+[node name="可吞噬分身15" parent="." instance=ExtResource("1_kierq")]
+position = Vector2(54, -6)

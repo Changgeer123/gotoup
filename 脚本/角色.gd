@@ -49,4 +49,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func go_big():
-	scale *= 1.1
+	scale *= 1.01

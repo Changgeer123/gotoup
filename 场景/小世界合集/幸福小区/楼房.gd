@@ -16,4 +16,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == '角色':
 		fenshens()
 func fenshens():
-	pass
+	var fs = preload("res://场景/小世界合集/幸福小区/分身肉团/分身肉团.tscn").instantiate()
+	get_parent().add_child(fs)
+	fs.global_position = global_position
+	queue_free()
