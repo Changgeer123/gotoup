@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bns2yt0biyiel"]
+
+[ext_resource type="Script" uid="uid://bmq0pi5frnkkj" path="res://场景/小世界合集/幸福小区/楼房/可站楼房.gd" id="1_dk28k"]
+[ext_resource type="Texture2D" uid="uid://d1ylxdl0lwtjx" path="res://美术/背景.png" id="1_f0pqe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0pqe"]
+size = Vector2(260, 408)
+
+[node name="可站楼房" type="StaticBody2D"]
+scale = Vector2(0.24435851, 0.24435851)
+script = ExtResource("1_dk28k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2927928, 0.45333332)
+texture = ExtResource("1_f0pqe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f0pqe")

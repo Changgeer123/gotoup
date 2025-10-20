@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnpaqxigch5wv"]
 
 [ext_resource type="Script" uid="uid://c0rmbm78yjr1c" path="res://场景/小世界合集/幸福小区/幸福小气.gd" id="1_10bq5"]
-[ext_resource type="PackedScene" uid="uid://dxqvjhiy1lkh0" path="res://场景/小世界合集/幸福小区/楼房.tscn" id="2_10bq5"]
+[ext_resource type="PackedScene" uid="uid://dxqvjhiy1lkh0" path="res://场景/小世界合集/幸福小区/楼房/楼房.tscn" id="2_10bq5"]
 [ext_resource type="PackedScene" uid="uid://b10xlkcxltfxl" path="res://场景/道具/土块.tscn" id="2_cptox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cptox"]

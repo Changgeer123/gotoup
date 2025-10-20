@@ -13,10 +13,14 @@ var stop = false
 #失重
 var loseg = false
 
+func _ready() -> void:
+	print(get_path())
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 
 	if stop:
+		move_and_slide()
 		return
 		
 	if not is_on_floor() and not loseg:
@@ -50,3 +54,4 @@ func _physics_process(delta: float) -> void:
 
 func go_big():
 	scale *= 1.01
+	$Camera2D.zoom *= 0.99
