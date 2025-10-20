@@ -24,6 +24,7 @@ func two(body):
 	fenshen.position = Vector2(0, -200)
 	var pz = body.get_node('CollisionShape2D').duplicate()
 	body.add_child(pz)
+	pz.name = 'fenshen'
 	pz.position = Vector2(0, -200)
 	print(pz.name)
 	

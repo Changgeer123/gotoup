@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b45vwrntisqua" path="res://美术/framesheet-1760888906368.png" id="3_q8m4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umjw2"]
-size = Vector2(72, 96)
+size = Vector2(66, 102)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtab7"]
 atlas = ExtResource("3_q8m4n")
@@ -80,6 +80,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jkm2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 8)
 shape = SubResource("RectangleShape2D_umjw2")
 
 [node name="Camera2D" type="Camera2D" parent="."]

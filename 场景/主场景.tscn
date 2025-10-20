@@ -19,9 +19,6 @@ position = Vector2(614, -17.499878)
 scale = Vector2(2.1576576, 2.8388891)
 texture = ExtResource("1_o5lm3")
 
-[node name="角色" parent="." instance=ExtResource("2_r1b65")]
-position = Vector2(131, 609)
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="终点" parent="." instance=ExtResource("4_qysdn")]
@@ -56,14 +53,17 @@ scale = Vector2(1.592337, 0.8994985)
 position = Vector2(873, 142)
 shape = SubResource("RectangleShape2D_3fatf")
 
+[node name="幸福小区" parent="." instance=ExtResource("8_0faug")]
+position = Vector2(8590, 520)
+
+[node name="角色" parent="." instance=ExtResource("2_r1b65")]
+position = Vector2(180, 592)
+
 [node name="地狱一号" parent="." instance=ExtResource("6_3fatf")]
 position = Vector2(1259, 3046)
 rotation = 0.00039024826
 
 [node name="双重幻影" parent="." instance=ExtResource("7_t7rjn")]
 position = Vector2(4013, 7123)
-
-[node name="幸福小区" parent="." instance=ExtResource("8_0faug")]
-position = Vector2(8590, 520)
 
 [connection signal="body_entered" from="初始土块四兄弟/Area2D" to="初始土块四兄弟" method="_on_area_2d_body_entered"]

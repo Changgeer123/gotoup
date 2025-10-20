@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var speed: float = 0.0  # 前进速度
+var bianyi = Vector2(10, -10)
 
 var have_people = null
 

@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.get_node('@CollisionShape2D@2').queue_free()
+	body.get_node('fenshen').queue_free()
 	body.get_node('分身').queue_free()
 	body.global_position.y -= 200
 	queue_free()
