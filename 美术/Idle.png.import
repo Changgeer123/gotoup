@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b45vwrntisqua"
-path="res://.godot/imported/framesheet-1760888906368.png-a92550293f546de22c9585c25802193d.ctex"
+uid="uid://sqqjeuh0mjtb"
+path="res://.godot/imported/Idle.png-b08649a0622273db38c64aa16dd21bbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://美术/framesheet-1760888906368.png"
-dest_files=["res://.godot/imported/framesheet-1760888906368.png-a92550293f546de22c9585c25802193d.ctex"]
+source_file="res://美术/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-b08649a0622273db38c64aa16dd21bbc.ctex"]
 
 [params]
 
