@@ -34,7 +34,6 @@ func check():
 		to = true
 
 func together():
-	$"围栏".queue_free()
-	var lou = preload("res://场景/小世界合集/幸福小区/楼房/可站楼房.tscn").instantiate()
-	add_child(lou)
-	lou.global_position = get_node('/root/Node2D/角色').global_position + Vector2(0, 400)
+	$".".queue_free()
+	get_node('/root/Node2D/角色').scale = Vector2(1,1)
+	get_node('/root/Node2D/角色/Camera2D').zoom = Vector2(1,1)

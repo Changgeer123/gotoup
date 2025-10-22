@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3qhgaboho3rl" path="res://美术/WalkSheet.png" id="5_pfa8y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umjw2"]
-size = Vector2(66, 102)
+size = Vector2(91, 102)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc4vs"]
 atlas = ExtResource("4_5sfq8")
@@ -137,18 +137,18 @@ animations = [{
 script = ExtResource("1_novfl")
 
 [node name="人物" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jkm2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 8)
+position = Vector2(6.5, -3)
 shape = SubResource("RectangleShape2D_umjw2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, -15)
+scale = Vector2(0.66250867, 0.66250867)
 sprite_frames = SubResource("SpriteFrames_xc4vs")
 animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.70282215

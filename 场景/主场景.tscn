@@ -57,7 +57,7 @@ shape = SubResource("RectangleShape2D_3fatf")
 position = Vector2(8590, 520)
 
 [node name="角色" parent="." instance=ExtResource("2_r1b65")]
-position = Vector2(5686, 5556)
+position = Vector2(5526, 5589)
 
 [node name="地狱一号" parent="." instance=ExtResource("6_3fatf")]
 position = Vector2(1259, 3046)

@@ -49,6 +49,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if velocity.x == 0 and velocity.y == 0:
+		$"人物".visible = true
+		$AnimatedSprite2D.visible = false
+	else:
+		$"人物".visible = false
+		$AnimatedSprite2D.visible = true
 
 	move_and_slide()
 
