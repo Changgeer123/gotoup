@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://dpmocvs577iud"]
+[gd_scene load_steps=26 format=3 uid="uid://dpmocvs577iud"]
 
 [ext_resource type="Script" uid="uid://csdusxiudd6vd" path="res://脚本/角色.gd" id="1_novfl"]
-[ext_resource type="Texture2D" uid="uid://cjq2g5d316x4s" path="res://美术/Back.png" id="2_jkm2i"]
+[ext_resource type="Texture2D" uid="uid://bref2k2fdean7" path="res://美术/跳/生成人物跳跃逐帧图片 (1).png" id="2_wtab7"]
 [ext_resource type="Texture2D" uid="uid://dwei6garxnp11" path="res://美术/Run.png" id="4_5sfq8"]
+[ext_resource type="Texture2D" uid="uid://dvym7hp2g16uq" path="res://美术/跳/生成人物跳跃逐帧图片 (2).png" id="5_5sfq8"]
 [ext_resource type="Texture2D" uid="uid://3qhgaboho3rl" path="res://美术/WalkSheet.png" id="5_pfa8y"]
+[ext_resource type="Texture2D" uid="uid://dy110u2wkepsa" path="res://美术/跳/生成人物跳跃逐帧图片 (3) (1).png" id="6_80b7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umjw2"]
 size = Vector2(91, 102)
@@ -133,12 +135,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_udvjx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5sfq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_80b7t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="角色" type="CharacterBody2D"]
 script = ExtResource("1_novfl")
-
-[node name="人物" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_jkm2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6.5, -3)
@@ -146,9 +158,19 @@ shape = SubResource("RectangleShape2D_umjw2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="walk" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(10, -15)
 scale = Vector2(0.66250867, 0.66250867)
 sprite_frames = SubResource("SpriteFrames_xc4vs")
 animation = &"Walk"
 autoplay = "Walk"
+
+[node name="jump" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.05322476, 0.05322476)
+sprite_frames = SubResource("SpriteFrames_udvjx")
+
+[node name="人物" type="Sprite2D" parent="."]
+scale = Vector2(0.051982064, 0.051982064)
+texture = ExtResource("2_wtab7")

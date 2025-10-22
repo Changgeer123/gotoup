@@ -40,7 +40,14 @@ func _physics_process(delta: float) -> void:
 		# 在失重状态下，当没有按下上下键时，垂直速度逐渐归零
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 			
-
+	if velocity.x>0:
+		$"人物".flip_h = false
+		$walk.flip_h = false
+		$jump.flip_h = false
+	elif velocity.x<0:
+		$"人物".flip_h = true
+		$walk.flip_h = true
+		$jump.flip_h = true
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if is_on_floor() or loseg:
@@ -52,10 +59,16 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.x == 0 and velocity.y == 0:
 		$"人物".visible = true
-		$AnimatedSprite2D.visible = false
-	else:
+		$walk.visible = false
+		$jump.visible = false
+	elif velocity.y == 0 and velocity.x != 0:
 		$"人物".visible = false
-		$AnimatedSprite2D.visible = true
+		$walk.visible = true
+		$jump.visible = false
+	elif velocity.y != 0 and velocity.x != 0:
+		$"人物".visible = false
+		$walk.visible = false
+		$jump.visible = true
 
 	move_and_slide()
 
