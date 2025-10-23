@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxh1k7ilkvuaw"]
+
+[ext_resource type="PackedScene" uid="uid://b10xlkcxltfxl" path="res://场景/道具/土块.tscn" id="1_fn10i"]
+[ext_resource type="Script" uid="uid://deual6lw3h1ka" path="res://场景/小世界合集/左右为难/左右为难.gd" id="1_vohll"]
+
+[node name="左右为难" type="Node2D"]
+script = ExtResource("1_vohll")
+
+[node name="土块4" parent="." instance=ExtResource("1_fn10i")]
+position = Vector2(262.00003, 576)
+scale = Vector2(2.0190988, -0.5336941)
+
+[node name="左镜" type="Node2D" parent="."]
+
+[node name="土块" parent="左镜" instance=ExtResource("1_fn10i")]
+position = Vector2(144.00002, 240)
+scale = Vector2(0.25376981, -0.13602728)
+
+[node name="土块2" parent="左镜" instance=ExtResource("1_fn10i")]
+position = Vector2(463.00003, 383)
+scale = Vector2(0.25376981, -0.13602728)
+
+[node name="右境" type="Node2D" parent="."]
+
+[node name="土块3" parent="右境" instance=ExtResource("1_fn10i")]
+position = Vector2(185, 279.00003)
+scale = Vector2(0.25376981, -0.13602728)
+
+[node name="土块5" parent="右境" instance=ExtResource("1_fn10i")]
+position = Vector2(493.00003, 123.000015)
+scale = Vector2(0.25376981, -0.13602728)

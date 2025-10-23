@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 func pz_disable():
 	self.collision_layer = 0
 	self.collision_mask = 0
+
+func pz_able():
+	self.collision_layer = 1
+	self.collision_mask = 1
